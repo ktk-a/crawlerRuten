@@ -5,7 +5,6 @@ Spyder Editor
 This is a temporary script file.
 """
 
-import requests
 import crawler_sql
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -27,7 +26,7 @@ def crawlerRuten(key):
     return nameS,priceS,P_IDS
  
 NAME,PRICE,P_ID = crawlerRuten('cardistry')
-sql = crawler_sql.Sql_Access('127.0.0.1','returnCardistry','ktk','ktkruten')
+sql = crawler_sql.Sql_Access()
 for i in range(len(NAME)):
     print(P_ID[i]['data-no'])
     print(NAME[i].text)
